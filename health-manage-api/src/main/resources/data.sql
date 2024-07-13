@@ -1,0 +1,25 @@
+CREATE TABLE patient (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  lastName VARCHAR(50) NOT NULL,
+  phone VARCHAR(15) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  address TEXT NOT NULL
+);
+
+CREATE TABLE staff (
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   name VARCHAR(50) NOT NULL,
+   lastName VARCHAR(50) NOT NULL,
+   phone VARCHAR(15) NOT NULL,
+   email VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE `user` (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(25) NOT NULL,
+  password TEXT NOT NULL,
+  enabled BOOLEAN NOT NULL,
+  staff_id INT,
+  FOREIGN KEY (staff_id) REFERENCES staff(id)
+);
